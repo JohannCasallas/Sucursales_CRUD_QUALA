@@ -20,13 +20,6 @@ builder.Services.AddEndpointsApiExplorer();
 // Agrega generación de documentación Swagger
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddControllers()
-//    .AddJsonOptions(options =>
-//    {
-//        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
-//    });
-
-
 // Construye la aplicación
 var app = builder.Build();
 

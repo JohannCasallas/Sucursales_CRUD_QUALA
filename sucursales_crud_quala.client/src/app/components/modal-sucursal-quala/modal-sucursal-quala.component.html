@@ -1,0 +1,34 @@
+<h1 mat-dialog-title class="titulo-dialogo">
+  {{ tituloAccion }} Sucursal
+</h1>
+<div mat-dialog-content class="contenido-dialogo">
+  <form [formGroup]="FormSucursal">
+    <mat-form-field appearance="outline" class="campo-formulario">
+      <mat-label>Identificación</mat-label>
+      <input matInput formControlName="identificacion" maxlength="30">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="campo-formulario">
+      <mat-label>Descripción</mat-label>
+      <input matInput formControlName="descripcion" maxlength="100">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="campo-formulario">
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion" maxlength="50">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline" class="campo-formulario">
+      <mat-label>Moneda</mat-label>
+      <mat-select formControlName="monedaId">
+        <mat-option *ngFor="let item of ListaMonedas" [value]="item.monedaId">
+          {{ item.descripcion }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="acciones-dialogo">
+  <button mat-raised-button mat-dialog-close color="primary" class="boton-dialogo">Cerrar</button>
+  <button mat-raised-button mat-dialog-close color="primary" (click)="crearActualizarSucursal()" [disabled]="FormSucursal.invalid" class="boton-dialogo">{{ botonAccion }}</button>
+</div>
