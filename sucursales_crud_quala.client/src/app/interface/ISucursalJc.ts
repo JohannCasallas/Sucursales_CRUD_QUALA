@@ -3,6 +3,6 @@ export interface ISucursalJc {
   descripcion: string;
   direccion: string;
   identificacion: string;
-  fechaCreacion: Date;
+  fechaCreacion?: Date;
   monedaId: number;
 }

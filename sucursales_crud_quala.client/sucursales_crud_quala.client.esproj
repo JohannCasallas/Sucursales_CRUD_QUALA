@@ -9,5 +9,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="src\app\interface\" />
+    <Folder Include="src\app\components\" />
   </ItemGroup>
 </Project>

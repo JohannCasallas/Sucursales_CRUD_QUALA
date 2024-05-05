@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IMonedaJc } from '../interface/IMonedaJc';
 import { IRespuesta } from '../interface/IRespuesta';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -10,11 +11,12 @@ import { IRespuesta } from '../interface/IRespuesta';
 })
 export class MonedaServicio {
 
-  private apiURL: string = '';
+  private endPoint: string = environment.endPoint;
+  private apiURL: string = this.endPoint + "MonedaJcs/";
 
   constructor(private http: HttpClient) { }
 
   obtenerMonedas(): Observable<IRespuesta<IMonedaJc[]>> {
-    return this.http.get<IRespuesta<IMonedaJc[]>>(`${this.apiURL}/api/MonedaJcs/ObtenerMonedas`);
+    return this.http.get<IRespuesta<IMonedaJc[]>>(`${this.apiURL}ObtenerMonedas`);
   }
 }
